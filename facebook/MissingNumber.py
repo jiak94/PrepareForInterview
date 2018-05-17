@@ -9,3 +9,10 @@ class Solution(object):
             if container[i] != 0:
                 return i
         return -1
+    # solution 2
+    def missingNumber2(self, nums):
+        n = len(nums)
+        helper = [-1] * (n+1)
+        for i in range(n):
+            helper[nums[i]] = 1
+        return helper.index(-1)
